@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi Step Form</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ================= SIDEBAR (only on big screens) ================= -->
+  <div class="sidebar">
+    <div class="side-step">
+      <div class="circle active circle1">1</div>
+      <div><small>STEP 1</small><p>YOUR INFO</p></div>
+    </div>
+    <div class="side-step">
+      <div class="circle circle2">2</div>
+      <div><small>STEP 2 </small><p>SELECT PLAN</p></div>
+    </div>
+    <div class="side-step">
+      <div class="circle circle3">3</div>
+      <div><small>STEP 3</small><p>ADD-ONS</p></div>
+    </div>
+    <div class="side-step">
+      <div class="circle circle4">4</div>
+      <div><small>STEP 4</small><p>SUMMARY</p></div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN AREA ================= -->
+  <div class="main">
+
+    <!-- Step circles 1 2 3 4 (only on mobile) -->
+    <div class="step-bar">
+      <div class="circle active circle1">1</div>
+      <div class="circle circle2">2</div>
+      <div class="circle circle3">3</div>
+      <div class="circle circle4">4</div>
+    </div>
+
+    <div class="content">
+
+      <!-- STEP 1 : Personal Info -->
+      <div class="step" id="step1">
+        <h1>Personal info</h1>
+        <p class="text">Please provide your name, email address, and phone number.</p>
+
+        <label>Name</label>
+        <input type="text" placeholder="e.g. Stephen King" id="name">
+
+        <label>Email Address</label>
+        <input type="email" placeholder="e.g. stephenking@lorem.com" id="email">
+
+        <label>Phone Number <span class="error-text">This field is required</span></label>
+        <input type="tel" placeholder="e.g. +1 234 567 890" id="phone">
+      </div>
+
+      <!-- STEP 2 : Select your plan -->
+      <div class="step hide" id="step2">
+        <h1>Select your plan</h1>
+        <p class="text">You have the option of monthly or yearly billing.</p>
+
+        <div class="plans">
+          <div class="plan " id="arcade">
+            <div>🕹️</div>
+            <div>
+              <h3>Arcade</h3>
+              <div class="price price1"></div>
+            </div>
+          </div>
+
+          <div class="plan" id="advanced">
+            <div>🚀</div>
+            <div>
+              <h3>Advanced</h3>
+              <div class="price price2"></div>
+            </div>
+          </div>
+
+          <div class="plan" id="pro">
+            <div>👑</div>
+            <div>
+              <h3>Pro</h3>
+              <div class="price price3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-box">
+          <span id="month">Monthly</span>
+          <span id="year">Yearly</span>
+        </div>
+      </div>
+
+      <!-- STEP 3 : Pick add-ons -->
+      <div class="step hide" id="step3">
+        <h1>Pick add-ons</h1>
+        <p class="text">Add-ons help enhance your gaming experience.</p>
+
+        <div class="addon selected" id="online">
+          <input type="checkbox" checked>
+          <div>
+            <h3>Online service</h3>
+            <p>Access to multiplayer games</p>
+          </div>
+          <span class="addon-price">+$1/mo</span>
+        </div>
+
+        <div class="addon selected" id="storage">
+          <input type="checkbox" checked>
+          <div>
+            <h3>Larger storage</h3>
+            <p>Extra 1TB of cloud save</p>
+          </div>
+          <span class="addon-price">+$2/mo</span>
+        </div>
+
+        <div class="addon" id="profile">
+          <input type="checkbox">
+          <div>
+            <h3>Customizable profile</h3>
+            <p>Custom theme on your profile</p>
+          </div>
+          <span class="addon-price">+$2/mo</span>
+        </div>
+
+        <div class="toggle-box">
+          <span id="month-step">Monthly</span>
+          <span id="year-step">Yearly</span>
+        </div>
+      </div>
+
+      <!-- STEP 4 : Finishing up -->
+      <div class="step hide" id="step4">
+        <h1>Finishing up</h1>
+        <p class="text">Double-check everything looks OK before confirming.</p>
+
+        <div class="summary-box">
+          <div class="line">
+            <b>Arcade (Monthly)</b>
+            <b>$9/mo</b>
+          </div>
+          <div class="line">
+            <span>Online service</span>
+            <b>+$1/mo</b>
+          </div>
+          <div class="line">
+            <span>Larger storage</span>
+            <b>+$2/mo</b>
+          </div>
+        </div>
+
+        <div class="total-line">
+          <span>Total (per month)</span>
+          <span class="amount">+$12/mo</span>
+        </div>
+      </div>
+
+      <!-- STEP 5 : Thank you -->
+      <div class="step hide" id="step5">
+        <div class="thankyou">
+          <div class="check-circle">✔</div>
+          <h1>Thank you!</h1>
+          <p class="text">Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free to
+          email us at support@loremgaming.com</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="back-btn">Go Back</button>
+      <button class="next-btn">Next Step</button>
+    </div>
+
+  </div>
+
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

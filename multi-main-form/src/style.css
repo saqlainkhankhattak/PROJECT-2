@@ -1,0 +1,366 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif; /* Added a nice font fallback */
+}
+
+/* ---------- Page Background ---------- */
+body {
+  background: linear-gradient(150deg, #b8d4ff, #cdb4f6, #ffc2dd);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ---------- White Card ---------- */
+.card {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Sidebar (desktop only) ---------- */
+.sidebar {
+  display: none;
+}
+.side-step {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.side-step small {
+  color: #d0d6e9;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.side-step p {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 2px 0 0 0;
+}
+.sidebar .circle {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+.sidebar .circle.active {
+  background: #bfe2fd;
+  border-color: #bfe2fd;
+  color: #02295a;
+}
+
+/* ---------- Step Circles (mobile top bar) ---------- */
+.step-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #d6d9e6;
+  color: #8b91b5;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.circle.active {
+  background: #473dff;
+  border-color: #473dff;
+  color: white;
+}
+
+/* ---------- Heading and Text ---------- */
+h1 {
+  font-size: 22px;
+  color: #02295a;
+}
+.text {
+  color: #9699ab;
+  font-size: 14px;
+  margin: 5px 0 20px 0;
+}
+
+/* ---------- Form Inputs (Step 1) ---------- */
+label {
+  display: block;
+  font-size: 13px;
+  color: #02295a;
+  margin-top: 15px;
+  font-weight: 500;
+}
+input {
+  width: 100%;
+  padding: 11px;
+  margin-top: 5px;
+  border: 1px solid #d6d9e6;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+input:focus {
+  border-color: #473dff;
+}
+input.error {
+  border-color: #e35d5d;
+  background-color: #fff8f8;
+}
+.error-text {
+  color: #e35d5d;
+  font-size: 12px;
+  font-weight: bold;
+  float: right;
+  display: none;
+}
+.error-text.errorActive {
+  display: block;
+}
+
+/* ---------- Plan Boxes (Step 2) ---------- */
+.plans {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.plan {
+  border: 1px solid #d6d9e6;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.plan:hover {
+  border-color: #473dff;
+}
+.plan.selected {
+  border-color: #473dff;
+  background: #f4f5ff;
+}
+.plan h3 {
+  font-size: 15px;
+  color: #02295a;
+  margin: 0;
+}
+.price {
+  font-size: 13px;
+  color: #9699ab;
+  margin-top: 3px;
+}
+
+/* ---------- Monthly / Yearly Toggle ---------- */
+.toggle-box {
+  background: #eef2ff;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.toggle-box span {
+  font-size: 13px;
+  font-weight: bold;
+  color: #9699ab;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.toggle-box span.active {
+  color: #02295a;
+}
+
+/* ---------- Add-ons Boxes (Step 3) ---------- */
+.addon {
+  border: 1px solid #d6d9e6;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.addon:hover {
+  border-color: #473dff;
+}
+.addon.selected {
+  border-color: #473dff;
+  background: #f4f5ff;
+}
+.addon h3 {
+  font-size: 14px;
+  color: #02295a;
+  margin: 0;
+}
+.addon p {
+  font-size: 12px;
+  color: #9699ab;
+  margin: 3px 0 0 0;
+}
+.addon-price {
+  margin-left: auto;
+  color: #473dff;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* ---------- Summary (Step 4) ---------- */
+.summary-box {
+  background: #f8f9ff;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #e6e8f0;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.line:last-child {
+  margin-bottom: 0;
+}
+.line b {
+  color: #02295a;
+}
+.line span {
+  color: #9699ab;
+}
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 14px;
+}
+.total-line .amount {
+  color: #473dff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: #9699ab;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.back-btn:hover {
+  color: #02295a;
+}
+.next-btn {
+  background: #02295a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.next-btn:hover {
+  background: #1e3a7a;
+}
+
+/* ---------- Thank You (Step 5) ---------- */
+.thankyou {
+  text-align: center;
+  padding: 20px 0;
+}
+.check-circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #181d3a; /* Changed to match theme better, or keep #ff5f6d */
+  background: linear-gradient(135deg, #473dff, #8f85ff);
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+}
+
+/* ---------- Utility ---------- */
+.hide {
+  display: none !important;
+}
+
+/* ================================================
+   MEDIA QUERY : BIG SCREEN (desktop / laptop)
+   ================================================ */
+@media (min-width: 768px) {
+  .card {
+    max-width: 850px;
+    padding: 0;
+    display: flex;
+    min-height: 500px;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 280px;
+    background: linear-gradient(135deg, #181d3a, #02295a);
+    border-radius: 12px 0 0 12px;
+    padding: 40px 30px;
+  }
+
+  .step-bar {
+    display: none;
+  }
+
+  .main {
+    flex: 1;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .plans {
+    flex-direction: row;
+  }
+  
+  .plan {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .thankyou {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
